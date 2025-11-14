@@ -8,6 +8,8 @@ h1 {
 
 #results {
     color: aqua;
+    text-align: center;
+    font-size: 2em;
 }
 
 .choices{
