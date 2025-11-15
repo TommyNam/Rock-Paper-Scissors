@@ -11,18 +11,23 @@
     <section class="game-container">
       <h1>Rock Paper Scissors</h1>
 
-      <p id="results">Who will win?</p>
-
       <div class="score-board">
-        <div id="user-label" class="badge">User</div>
-        <div id="computer-label" class="badge">Computer</div>
-        <span id="user-score">0</span>:<span id="computer-score">0</span>
+        <div id="user-label" class="badge">
+          <span class="label">User</span>
+          <span id="user-score">0</span>
+        </div>
+        <div id="computer-label" class="badge">
+          <span class="label">Computer</span>
+          <span id="computer-score">0</span>
+        </div>
       </div>
 
       <div class="subtitle">
         <h2>Make your move!</h2>
         <p>Rock, Paper, or Scissors?</p>
       </div>
+
+      <p id="results">Who will win?</p>
 
       <div class="choices">
         <input
@@ -33,11 +38,9 @@
         <button class="submit">Submit</button>
       </div>
 
-
       <div class="reset">
         <button id="reset">Reset</button>
       </div>
-
     </section>
     <script src="script.js"></script>
   </body>

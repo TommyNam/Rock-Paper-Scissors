@@ -1,17 +1,95 @@
+.game-container {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  gap: 2rem;
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* background: linear-gradient(to bottom, #f9f9f9, #ddd); */
+  background-image: url("background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
-    text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white; /* fill text color */
+  -webkit-text-stroke: 0.1rem black; /* outline thickness + color */
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-.subtitle{
-    text-align: center;
+h2 {
+  font-size: 1rem;
 }
 
-#results {
-    color: aqua;
-    text-align: center;
-    font-size: 2em;
+p {
+  font-size: 1rem;
 }
 
-.choices{
-    text-align: center;
+.score-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.badge {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5em;
+  border: 0.2rem solid rgba(21, 161, 241, 0.747);
+  background-color: rgb(255, 255, 255);
+  padding: 1em;
+  width: 50%;
+}
+
+.label {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+#user-score,
+#computer-score {
+  font-size: 1.5rem;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 2fr;
+  justify-content: center;
+}
+
+#user-input {
+  padding: 0.5em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  text-align: center;
+}
+
+.submit {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+}
+
+.reset {
+  margin-top: 1rem;
+}
+
+#reset {
+  padding: 0.5em 1em;
+  font-size: 1rem;
 }

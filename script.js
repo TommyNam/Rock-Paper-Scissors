@@ -29,10 +29,11 @@ submitBtn.addEventListener("click", () => {
     results.textContent = "Player Wins!";
     userScore++;
     userScoreboard.textContent = userScore;
-  } else {
-    results.textContent = "Computer Wins!";
+  } else if ((results.textContent = "Computer Wins!")) {
     computerScore++;
     computerScoreboard.textContent = computerScore;
+  } else {
+    window.alert("Make a choice!"); // VALIDATION (DO IT)
   }
 });
 
