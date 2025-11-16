@@ -8,32 +8,38 @@
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Asimovian", sans-serif;
   /* background: linear-gradient(to bottom, #f9f9f9, #ddd); */
-  background-image: url("background.png");
+  background-image: url("images/battle.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 98vh;
+  min-height: 98.2vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
   color: white; /* fill text color */
-  -webkit-text-stroke: 0.1rem black; /* outline thickness + color */
+  -webkit-text-stroke: 0.1rem rgba(255, 0, 0, 0.5); /* outline thickness + color */
   text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.3rem;
+  color: rgb(0, 217, 255); /* fill text color */
+  -webkit-text-stroke: 0.2rem rgba(0, 0, 0, 0.5); /* outline thickness + color */
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.5);
 }
 
 p {
   font-size: 1rem;
+  color: rgb(0, 255, 85); /* fill text color */
+  -webkit-text-stroke: 0.2rem rgba(0, 0, 0, 0.5); /* outline thickness + color */
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.5);
 }
 
 .score-board {
@@ -49,8 +55,8 @@ p {
   justify-items: center;
   gap: 0.5rem;
   border-radius: 0.5em;
-  border: 0.2rem solid rgba(21, 161, 241, 0.747);
-  background-color: rgb(255, 255, 255);
+  border: 0.2rem solid rgba(197, 83, 75, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 1em;
   width: 50%;
 }
@@ -75,6 +81,7 @@ p {
 #user-input {
   padding: 0.5em;
   font-size: 1rem;
+  border: 0.2rem solid rgba(54, 30, 27, 0.5);
   border-radius: 0.5em;
   text-align: center;
 }
@@ -82,6 +89,7 @@ p {
 .submit {
   padding: 0.5em 1em;
   font-size: 1rem;
+  border: 0.2rem solid rgba(54, 30, 27, 0.5);
   border-radius: 0.5em;
 }
 
@@ -92,4 +100,30 @@ p {
 #reset {
   padding: 0.5em 1em;
   font-size: 1rem;
+}
+
+#results {
+  color: rgb(238, 255, 0); /* temp */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+#results img {
+  width: 120px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+#results img[src] {
+  opacity: 1;
+}
+
+#winner-text {
+  font-size: 1.2rem;
+  text-align: center;
+  flex-grow: 1;
 }

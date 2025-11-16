@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissors</title>
+    <title>Jan-Ken-Pon!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asimovian&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <section class="game-container">
-      <h1>Rock Paper Scissors</h1>
+      <h1>Jan-Ken-Pon!</h1>
 
       <div class="score-board">
         <div id="user-label" class="badge">
@@ -27,7 +34,11 @@
         <p>Rock, Paper, or Scissors?</p>
       </div>
 
-      <p id="results">Who will win?</p>
+      <div id="results">
+        <img id="userChoiceImg" alt="Your Choice" />
+        <span id="winner-text">Who will win?</span>
+        <img id="computerChoiceImg" alt="Computer Choice" />
+      </div>
 
       <div class="choices">
         <input
