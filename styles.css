@@ -25,28 +25,21 @@ h1 {
   margin-bottom: 1rem;
   color: white; /* fill text color */
   -webkit-text-stroke: 0.1rem rgba(255, 0, 0, 0.5); /* outline thickness + color */
-  text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.5);
 }
 
 h2 {
-  font-size: 1.3rem;
-  color: rgb(0, 217, 255); /* fill text color */
-  -webkit-text-stroke: 0.2rem rgba(0, 0, 0, 0.5); /* outline thickness + color */
-  text-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.5);
-}
-
-p {
-  font-size: 1rem;
-  color: rgb(0, 255, 85); /* fill text color */
-  -webkit-text-stroke: 0.2rem rgba(0, 0, 0, 0.5); /* outline thickness + color */
-  text-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.5);
+  font-size: 3rem;
+  color: #ffffff; /* fill text color */
+  -webkit-text-stroke: 0.1rem rgba(0, 0, 0, 0.3); /* outline thickness + color */
+  text-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 1);
 }
 
 .score-board {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  justify-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
 
 .badge {
@@ -55,9 +48,10 @@ p {
   justify-items: center;
   gap: 0.5rem;
   border-radius: 0.5em;
-  border: 0.2rem solid rgba(197, 83, 75, 0.5);
+  border: 0.2rem solid rgba(240, 163, 163, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1em;
+  flex: 1;
   width: 50%;
 }
 
@@ -65,17 +59,23 @@ p {
   font-weight: bold;
   text-decoration: underline;
   font-size: 1rem;
+  color: white; /* fill text color */
 }
 
 #user-score,
 #computer-score {
   font-size: 1.5rem;
+  color: rgb(0, 0, 0); /* fill text color */
 }
 
 .choices {
   display: grid;
   grid-template-columns: 2fr;
-  justify-content: center;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 #user-input {
@@ -84,6 +84,7 @@ p {
   border: 0.2rem solid rgba(54, 30, 27, 0.5);
   border-radius: 0.5em;
   text-align: center;
+  width: 100%;
 }
 
 .submit {
@@ -91,6 +92,13 @@ p {
   font-size: 1rem;
   border: 0.2rem solid rgba(54, 30, 27, 0.5);
   border-radius: 0.5em;
+  flex-shrink: 0;
+}
+
+.submit:active {
+  transform: none;
+  padding: 0.5em 1em;
+  border: 0.2rem solid rgba(54, 30, 27, 0.5);
 }
 
 .reset {
@@ -100,20 +108,21 @@ p {
 #reset {
   padding: 0.5em 1em;
   font-size: 1rem;
+  border-radius: 0.5em;
 }
 
 #results {
-  color: rgb(238, 255, 0); /* temp */
+  color: rgb(238, 255, 0);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  gap: 2rem;
   padding: 20px;
 }
 
 #results img {
   width: 120px;
-  height: auto;
+  height: 120px;
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
@@ -123,7 +132,12 @@ p {
 }
 
 #winner-text {
-  font-size: 1.2rem;
+  justify-items: center;
+  font-size: 1.5rem;
   text-align: center;
   flex-grow: 1;
+  flex-shrink: 0; /* prevents text from stretching*/
+  max-width: 200px;
+  margin: 0 auto;
+  word-wrap: break-word; /* wrap long text */
 }

@@ -20,10 +20,10 @@ submitBtn.addEventListener("click", () => {
   let playerChoice = userInput.value.toLowerCase().trim();
   let computer = computerChoice();
 
-  // Validation first
+  // check if player types a valid answer
   if (!["rock", "paper", "scissors"].includes(playerChoice)) {
-    window.alert("Make a choice!");
-    return;
+    winnerText.textContent = "Please enter rock, paper, or scissors!";
+    return; // stop if inputs wrong
   }
 
   // Game logic
@@ -43,23 +43,54 @@ submitBtn.addEventListener("click", () => {
     computerScoreboard.textContent = computerScore;
   }
 
-  // Show images after choices are made
+  // Show both images after choices are made
   showChoices(playerChoice, computer);
 });
 
+/* =========== 
+RESET FUNCTION
+=========== */
 resetBtn.addEventListener("click", () => {
+  // Resets score & message
   userScore = 0;
   computerScore = 0;
   userScoreboard.textContent = userScore;
   computerScoreboard.textContent = computerScore;
   winnerText.textContent = "Who will win?";
-  document.getElementById("userChoiceImg").src = "";
-  document.getElementById("computerChoiceImg").src = "";
+
+  // grab both images
+  const userImg = document.getElementById("userChoiceImg");
+  const compImg = document.getElementById("computerChoiceImg");
+
+  // turn off animation for instant hide
+  userImg.style.transition = "none";
+  compImg.style.transition = "none";
+
+  // clear image path to make them invisible
+  userImg.src = "";
+  compImg.src = "";
+  userImg.style.opacity = "0";
+  compImg.style.opacity = "0";
+
+  // forces the browser to apply the instant hide
+  void userImg.offsetWidth;
+  void compImg.offsetWidth;
+
+  // turns the fade in animation back on for the next round
+  userImg.style.transition = "opacity 0.5s ease-in";
+  compImg.style.transition = "opacity 0.5s ease-in";
 });
 
+// shows the image choices and fade them in
 function showChoices(playerChoice, computerChoice) {
-  document.getElementById("userChoiceImg").src =
-    "images/" + playerChoice + ".png";
-  document.getElementById("computerChoiceImg").src =
-    "images/" + computerChoice + ".png";
+  const userImg = document.getElementById("userChoiceImg");
+  const compImg = document.getElementById("computerChoiceImg");
+
+  // sets image path
+  userImg.src = "images/" + playerChoice + ".png";
+  compImg.src = "images/" + computerChoice + ".png";
+
+  // Fade back in
+  userImg.style.opacity = "1";
+  compImg.style.opacity = "1";
 }
