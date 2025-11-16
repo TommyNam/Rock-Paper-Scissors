@@ -16,7 +16,7 @@ Create a rock-paper-scissors game!
 - VSCode (Open Live Server extension)
 
 
-##Deployment Page: 
+## Deployment Page: 
 https://tommynam-janken.netlify.app/
 
 
