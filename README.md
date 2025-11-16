@@ -2,7 +2,7 @@
 R2H Guided Inquiry Week 6
 
 ## Project Overview:
-Create a rock-paper-scissors game!
+Create a rock-paper-scissors game! 
 
 
 ## Features
